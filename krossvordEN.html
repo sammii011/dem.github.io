@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Crossword</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a2e5c, #1a5a8c);
+            color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+            margin-bottom: 10px;
+            font-size: 2.4rem;
+        }
+        .subtitle {
+            color: #aad5ff;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        .grid-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(11, 34px);
+            grid-template-rows: repeat(11, 34px);
+            gap: 2px;
+            background-color: #0b1f3a;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .cell {
+            width: 34px;
+            height: 34px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: relative;
+            font-weight: bold;
+            font-size: 15px;
+            color: #222;
+        }
+        .cell.black {
+            background-color: #2c3e50;
+        }
+        .cell .number {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            font-size: 9px;
+            font-weight: bold;
+            color: #000;
+        }
+        .clues {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .clues h2 {
+            color: #ffcc00;
+            margin-top: 0;
+            border-bottom: 2px solid #5ab0e6;
+            padding-bottom: 6px;
+            font-size: 1.4rem;
+        }
+        .clue {
+            margin: 7px 0;
+        }
+        .num {
+            display: inline-block;
+            width: 20px;
+            font-weight: bold;
+            color: #5ab0e6;
+        }
+        .word-placeholder {
+            display: inline-block;
+            min-width: 110px;
+            border-bottom: 1px dashed #8ac8f0;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #aad5ff;
+            margin-top: 5px;
+        }
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(11, 28px);
+                grid-template-rows: repeat(11, 28px);
+            }
+            .cell { width: 28px; height: 28px; font-size: 13px; }
+            .cell .number { font-size: 7px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>❄️ New Year Crossword ❄️</h1>
+        <p class="subtitle">Solve 5 English words related to New Year celebrations!</p>
+
+        <div class="grid-container">
+            <div class="grid">
+                <!-- Row 1 -->
+                <div class="cell"><span class="number">1</span></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 2 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell"><span class="number">2</span></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <!-- Row 3 -->
+                <div class="cell"><span class="number">3</span></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 4 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell"><span class="number">4</span></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+
+                <!-- Row 5 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 6 -->
+                <div class="cell"><span class="number">5</span></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 7 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 8 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 9 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 10 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+
+                <!-- Row 11 -->
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+                <div class="cell black"></div>
+            </div>
+        </div>
+
+        <div class="clues">
+            <h2>Across:</h2>
+            <div class="clue"><span class="num">1.</span> <span class="word-placeholder">party</span> — Festive social gathering</div>
+            <div class="clue"><span class="num">2.</span> <span class="word-placeholder">snowman</span> — Figure built from snowballs</div>
+            <div class="clue"><span class="num">4.</span> <span class="word-placeholder">snowflakes</span> — Unique ice crystals falling from the sky</div>
+            <div class="clue"><span class="num">5.</span> <span class="word-placeholder">midnight</span> — The moment the New Year begins (00:00)</div>
+
+            <h2>Down:</h2>
+            <div class="clue"><span class="num">1.</span> <span class="word-placeholder">party</span> — Same as 1 across</div>
+            <div class="clue"><span class="num">3.</span> <span class="word-placeholder">tinsel</span> — Shiny decorative strips for the Christmas tree</div>
+        </div>
+
+        <p class="note">
+            ✅ Words: <b>party, snowman, midnight, snowflakes, tinsel</b><br>
+            🎯 Tip: All words intersect correctly — e.g., #1 across/down = "party"
+        </p>
+    </div>
+</body>
+</html>
